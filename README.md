@@ -43,6 +43,10 @@ CoinBoost is an earning application designed as part of an assignment for Cutesy
  
 ## video
 
+https://github.com/user-attachments/assets/62a328f7-4da3-4d5c-a45f-5714b242aa64
+
+
+
 
 ## Future Improvements
 - **Advanced Authentication**: Implement Google and social media login.
