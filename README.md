@@ -1,6 +1,6 @@
 # coinboost
 
-# CoinBoost - Earn Rewards App
+# CoinBoost
 
 ## Overview
 CoinBoost is an earning application designed as part of an assignment for Cutesy Gift. This project showcases a well-structured UI and basic functionality to demonstrate the earning system. The app allows users to complete tasks and earn virtual coins, which can later be redeemed for rewards.
@@ -34,13 +34,13 @@ CoinBoost is an earning application designed as part of an assignment for Cutesy
    ```
 
 ## Screenshots
- ![image1](https://github.com/user-attachments/assets/ae3a0058-4c35-4296-b94f-2c34ae619cd3)
- ![image2](https://github.com/user-attachments/assets/f4779830-fa25-497a-8375-e03234cc22bc)
- ![image6](https://github.com/user-attachments/assets/50c05a1e-bc5d-42a6-acac-4b326bd31c03)
- ![image5](https://github.com/user-attachments/assets/de31e88e-f423-4106-80e0-e159645fa6ec)
- ![image4](https://github.com/user-attachments/assets/6d305049-b1d9-446d-8ac2-06d9324ea1a3)
- ![image3](https://github.com/user-attachments/assets/17a33caa-0020-4606-be8b-e9e04600410c)
+ ![image1](https://github.com/user-attachments/assets/ae3a0058-4c35-4296-b94f-2c34ae619cd3) ![image2](https://github.com/user-attachments/assets/f4779830-fa25-497a-8375-e03234cc22bc) ![image6](https://github.com/user-attachments/assets/50c05a1e-bc5d-42a6-acac-4b326bd31c03)
+ 
+ 
+ ![image5](https://github.com/user-attachments/assets/de31e88e-f423-4106-80e0-e159645fa6ec) ![image4](https://github.com/user-attachments/assets/6d305049-b1d9-446d-8ac2-06d9324ea1a3)  ![image3](https://github.com/user-attachments/assets/17a33caa-0020-4606-be8b-e9e04600410c)
 
+ 
+ 
 ## video
 
 
