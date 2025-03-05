@@ -1,4 +1,5 @@
 import 'package:coinboost/constants/constants.dart';
+import 'package:coinboost/pages/home_navigation_page.dart';
 import 'package:coinboost/widgets/app_button_widgets.dart';
 import 'package:coinboost/widgets/app_text_field_widget.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class OnBoardingPage extends StatelessWidget {
               //logo
               Image.asset(
                 "assets/images/logo.png",
-                height: sHeight * .25,
+                height: sHeight * .2,
                 width: sWidth * .3,
               ),
 
@@ -38,7 +39,7 @@ class OnBoardingPage extends StatelessWidget {
               //image
               Image.asset(
                 "assets/images/onboardImage.png",
-                height: sHeight * .4,
+                height: sHeight * .35,
                 width: sWidth * .5,
               ),
 
@@ -51,7 +52,24 @@ class OnBoardingPage extends StatelessWidget {
               ),
 
               //continue button
-              appButtonWidget(sHeight: sHeight),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Material(
+                  elevation: 10,
+                  borderRadius: BorderRadius.circular(10),
+                  child: appButtonWidget(
+                    sHeight: sHeight,
+                    bTitle: "Continue",
+                    fontSize: 24,
+                    onPressed: () => Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HomeNavigationPage(),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

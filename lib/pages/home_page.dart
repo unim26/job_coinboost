@@ -1,14 +1,29 @@
+import 'package:coinboost/services/ad_service.dart';
 import 'package:coinboost/components/home_page/reward_options_component.dart';
 import 'package:coinboost/components/home_page/user_detail_component.dart';
 import 'package:coinboost/components/home_page/user_level_component.dart';
 import 'package:coinboost/components/home_page/user_wallet_component.dart';
-import 'package:coinboost/constants/constants.dart';
-import 'package:coinboost/widgets/reward_option_box_widget.dart';
+import 'package:coinboost/pages/read_news_page.dart';
+import 'package:coinboost/widgets/task_box_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  //ad services
+  final AdService _adService = AdService();
+
+  @override
+  void initState() {
+    _adService.loadInterstitialAd();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +36,7 @@ class HomePage extends StatelessWidget {
           children: [
             //space
             SizedBox(
-              height: 15,
+              height: sHeight * .02,
             ),
             //user profile detail
             Row(
@@ -49,7 +64,7 @@ class HomePage extends StatelessWidget {
 
             //space
             SizedBox(
-              height: 30,
+              height: sHeight * .02,
             ),
 
             //daily reward info
@@ -65,7 +80,7 @@ class HomePage extends StatelessWidget {
 
             //space
             SizedBox(
-              height: 15,
+              height: sHeight * .01,
             ),
 
             //reward option
@@ -73,7 +88,7 @@ class HomePage extends StatelessWidget {
 
             //space
             SizedBox(
-              height: 25,
+              height: sHeight * .025,
             ),
 
             //text
@@ -103,84 +118,48 @@ class HomePage extends StatelessWidget {
 
             //space
             SizedBox(
-              height: 25,
+              height: sHeight * .024,
             ),
 
             //task 1
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Container(
-                height: sHeight * .23,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: primaryColor,
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(
-                    color: Color.fromRGBO(206, 206, 206, 1),
-                    width: 1,
-                  ),
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: Stack(
-                    fit: StackFit.expand,
-                    children: [
-                      //image
-                      Image.asset(
-                        "assets/images/task1.png",
-                        fit: BoxFit.cover,
-                      ),
+            taskBoxWidget(
+              sHeight: sHeight,
+              sWidth: sWidth,
+              heroTag: "",
+              coverImage: "assets/images/task1.png",
+              taskOption: "Play Game",
+              rewardAmount: "10",
+            ),
 
-                      //task detail
-                      Positioned(
-                        bottom: 0,
-                        child: Container(
-                          height: sHeight * .042,
-                          width: sWidth * .9,
-                          decoration: BoxDecoration(
-                            color: Color.fromRGBO(255, 255, 255, .88),
-                            borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(10),
-                              bottomRight: Radius.circular(10),
-                            ),
-                            border: Border.all(
-                              color: Color.fromRGBO(48, 0, 80, .11),
-                              width: 1,
-                            ),
-                          ),
-                          child: Row(),//TODO
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+            SizedBox(
+              height: sHeight * .02,
             ),
 
             //task 2
-          ],
-        ),
+            taskBoxWidget(
+              sHeight: sHeight,
+              sWidth: sWidth,
+              coverImage: "assets/images/task2.png",
+              taskOption: "Read News",
+              rewardAmount: "5",
+              heroTag: "task_animation",
+              onTap: () async {
+                _adService.loadInterstitialAd();
 
-        //navigation bar
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: primaryColor,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          items: [
-            BottomNavigationBarItem(
-              icon:
-                  Image.asset("assets/images/home.png", height: 30, width: 30),
-              label: "Home",
-            ),
-            BottomNavigationBarItem(
-              icon:
-                  Image.asset("assets/images/level.png", height: 30, width: 30),
-              label: "levels",
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset("assets/images/profile.png",
-                  height: 30, width: 30),
-              label: "profile",
+                //show ad
+                _adService.interstitialAd?.show();
+
+                //navigate to next page
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ReadNewsPage(),
+                  ),
+                );
+
+                //load interstitialAd again
+                _adService.loadInterstitialAd();
+              },
             ),
           ],
         ),

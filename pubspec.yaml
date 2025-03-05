@@ -10,6 +10,9 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^6.2.1
+  google_mobile_ads: 
+  url_launcher: ^6.3.1
+  webview_flutter: ^4.10.0
 
 dev_dependencies:
   flutter_test:
