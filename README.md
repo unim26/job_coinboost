@@ -18,7 +18,7 @@ CoinBoost is an earning application designed as part of an assignment for Cutesy
 ## Installation
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/coinboost.git
+   https://github.com/unim26/job_coinboost.git
    ```
 2. Navigate to the project directory:
    ```sh
